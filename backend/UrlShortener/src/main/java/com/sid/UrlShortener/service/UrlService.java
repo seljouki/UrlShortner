@@ -13,15 +13,19 @@ public class UrlService {
 	
 	@Autowired
 	private UrlRepository urlRepository;
-	
+	/*cette methode fait un select par original url*/
 	public String getOrginalUrl(String shortUrl) {
 		return urlRepository.findOrginalUrlByShortUrl(shortUrl);
 	}
-	
+	/*cette methode verifie si l'url existe deja*/
 	public String urlExists(String originalUrl) {
 		return urlRepository.findShortUrl(originalUrl);
 		
 	}
+	/*cette methode verifie si l'url est valide ou non, 
+	 * puis s'il existe deja dans la base donnees avant de cree un nouveau shorturl.
+	 *  s'il existe deja on utilse l'ancien    */
+	
 	public Url generateShortUrl(String url) {
 		if(! isUrlValid(url)) {
 			return null;

@@ -1,5 +1,6 @@
 package com.sid.UrlShortener.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 public class Url {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable=false)
 	private int id;
 	private String shortUrl;
 	private String originalUrl;

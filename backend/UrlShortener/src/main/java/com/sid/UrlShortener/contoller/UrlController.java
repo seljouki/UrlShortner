@@ -27,7 +27,7 @@ public class UrlController {
 			URI uri = new URI(originalUrl);
 			HttpHeaders httpHeaders = new HttpHeaders();
 			httpHeaders.setLocation(uri);
-			return new ResponseEntity<String>(httpHeaders,HttpStatus.SEE_OTHER);
+			return new ResponseEntity<String>(httpHeaders,HttpStatus.OK);
 		}
 		return new ResponseEntity<String>(HttpStatus.BAD_REQUEST); 
 }
